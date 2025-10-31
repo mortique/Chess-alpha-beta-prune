@@ -1,32 +1,15 @@
 
 // Shakkimoottori.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-// todo: en passant, promotions, castling
-// 11.5 display board, make moves, checking possible moves for a given piece at given square (including checking checks), testing, (Piecemoves class)
-// 12.5 testing, minor polishing, data types uint
-// 13.5 rewrite data structures using vectors, creating getPossibleMovesforPlayer
-// 14.5 added evaluate to evaluate moves and captures and find best evaluated move for player, and movehistory functionality
-// 15.5 refactoring possible move mapping cleaner, testing evaluation for both sides, refining and adding isCheck function, fixing captured pieces in history
-// todo handle case where 2 equally good options, add castling, en passant
-// 16.5 cleaning up data structs, adding function for evaluating all own moves against opponents best play move, finding the best move
-// 17.5 created search for second iteration of moves after listing movepairs, long hunt for bug in pawn movement and isCheck
-// 18.5 created new approach, movepair search logic and added variations with value
-// Okay in simple capturing scenarios
-// Fixed pruning issues, added chaingHasCaptures info in nodes
-// 21.6 Added prioritizing checks after captures (and nodechain debugging)
-// Fixed giving checks evaluation bug, added deepening search on captures
-// Adding multiple best moves & deciding on refined evaluations on score ties
 // Todo 1. add dynamic search depth if needed in cases where only few moves are searched within searchlimit
 // 2. add extra depth for capturing last moves if needed
 // 3. refine and incorporate refined evaluation (and add all tied scores instead of n)
 // 4. Add castling, promotions, en passant
-// (why score 0 is -1 in evaluation?)
 // 29.6 fixed bug in isCheck and moveBack where king position doesn't correctly update in reverse moves
-// Optimized with AI findPlayerPieces and Board
-
+// GUI was generated with AI
 
 // ######
-// Requirements:
+// Requirements for running GUI-version(compiled in Ubuntu):
 // - font (now hardcoded dejavu.ttf) in the same folder to run
 // - SFML library for visual gui
 // - Compiling in command line, visual studio won't run it with SFML
@@ -40,7 +23,6 @@
 #include <limits>
 #include <algorithm>
 #include <climits>
-// Optimized board representation for fast alpha-beta pruning
 #include <array>
 #include <cstdint>
 
